@@ -1,10 +1,12 @@
 {
   "domain": "sensibo_custom",
   "name": "Sensibo Custom",
-  "codeowners": [],
+  "codeowners": ["@datsrt02"],
   "config_flow": true,
-  "documentation": "https://github.com/custom-components/sensibo_custom",
+  "documentation": "https://github.com/datsrt02/sensibo-ha-custom",
+  "integration_type": "hub",
   "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/datsrt02/sensibo-ha-custom/issues",
   "requirements": [],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

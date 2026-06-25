@@ -50,7 +50,16 @@ No direct local LAN control API was found in the APK. The app contains ESP provi
 
 This component is therefore implemented as cloud polling/control. If packet capture later proves that a Sensibo device accepts local AC commands, the component can add a separate local transport while keeping the same climate entity layer.
 
-## Installation
+## HACS installation
+
+Add this as a HACS custom repository:
+
+- Repository: `https://github.com/datsrt02/sensibo-ha-custom`
+- Category: `Integration`
+
+Then download `Sensibo Custom` from HACS and restart Home Assistant.
+
+## Manual installation
 
 Copy `custom_components/sensibo_custom` into Home Assistant's `config/custom_components/` directory, restart Home Assistant, then add the integration from Settings > Devices & services > Add integration > Sensibo Custom.
 
@@ -60,4 +69,3 @@ Authentication options:
 - Sensibo API key: the integration sends both `apiKey` query parameter and `X-API-KEY` header.
 
 Each Sensibo AC-capable pod is exposed as a Home Assistant `climate` entity.
-
