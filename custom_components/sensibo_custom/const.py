@@ -13,7 +13,7 @@ AUTH_METHOD_API_KEY = "api_key"
 CONF_BASE_URL = "base_url"
 DEFAULT_BASE_URL = "https://home.sensibo.com"
 
-DEFAULT_SCAN_INTERVAL_SECONDS = 60
+DEFAULT_SCAN_INTERVAL_SECONDS = 30
 
 PLATFORMS = [Platform.CLIMATE]
 
@@ -21,4 +21,3 @@ DEVICE_FIELDS = (
     "id,room,acState,connectionStatus,productModel,remoteCapabilities,"
     "location,features,measurements,mainMeasurementsSensor"
 )
-

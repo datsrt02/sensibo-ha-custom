@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 from datetime import timedelta
 import logging
 from typing import Any
@@ -39,14 +40,28 @@ class SensiboDataUpdateCoordinator(DataUpdateCoordinator[dict[str, dict[str, Any
         """Fetch devices from Sensibo."""
         try:
             devices = await self.client.async_get_devices()
+            device_map = {
+                str(device["id"]): device
+                for device in devices
+                if isinstance(device, dict) and device.get("id")
+            }
+            details = await asyncio.gather(
+                *(
+                    self.client.async_get_device(pod_id)
+                    for pod_id in device_map
+                ),
+                return_exceptions=True,
+            )
         except SensiboAuthError as err:
             raise ConfigEntryAuthFailed from err
         except (SensiboApiError, SensiboConnectionError) as err:
             raise UpdateFailed(str(err)) from err
 
-        return {
-            str(device["id"]): device
-            for device in devices
-            if isinstance(device, dict) and device.get("id")
-        }
+        for pod_id, detail in zip(device_map, details, strict=False):
+            if isinstance(detail, Exception):
+                _LOGGER.debug("Failed to refresh Sensibo pod %s details: %s", pod_id, detail)
+                continue
+            if isinstance(detail, dict) and detail:
+                device_map[pod_id] = {**device_map[pod_id], **detail}
 
+        return device_map

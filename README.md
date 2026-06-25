@@ -73,3 +73,4 @@ Each Sensibo AC-capable pod is exposed as a Home Assistant `climate` entity.
 ## Changelog
 
 - `0.1.2`: Round Home Assistant temperature values before sending them to Sensibo, because Sensibo's `targetTemperature` API requires an integer.
+- `0.1.3`: Refresh each pod's detail endpoint on every poll so state changes made from the Sensibo app are reflected back in Home Assistant. Poll interval is now 30 seconds.
