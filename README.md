@@ -69,3 +69,7 @@ Authentication options:
 - Sensibo API key: the integration sends both `apiKey` query parameter and `X-API-KEY` header.
 
 Each Sensibo AC-capable pod is exposed as a Home Assistant `climate` entity.
+
+## Changelog
+
+- `0.1.2`: Round Home Assistant temperature values before sending them to Sensibo, because Sensibo's `targetTemperature` API requires an integer.

@@ -286,7 +286,9 @@ class SensiboClimate(CoordinatorEntity[SensiboDataUpdateCoordinator], ClimateEnt
 
         temperature = kwargs.get(ATTR_TEMPERATURE)
         if temperature is not None:
-            await self._set_ac_property("targetTemperature", temperature)
+            await self._set_ac_property(
+                "targetTemperature", _as_target_temperature(temperature)
+            )
 
     async def async_set_fan_mode(self, fan_mode: str) -> None:
         """Set fan mode."""
@@ -422,3 +424,8 @@ def _as_float(value: Any) -> float | None:
         return float(value)
     except (TypeError, ValueError):
         return None
+
+
+def _as_target_temperature(value: Any) -> int:
+    """Convert Home Assistant temperature values to Sensibo's integer format."""
+    return int(round(float(value)))

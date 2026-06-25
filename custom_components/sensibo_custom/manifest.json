@@ -8,5 +8,5 @@
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/datsrt02/sensibo-ha-custom/issues",
   "requirements": [],
-  "version": "0.1.1"
+  "version": "0.1.2"
 }
