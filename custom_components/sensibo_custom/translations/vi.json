@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sensibo Custom",
+        "description": "Chọn cách Home Assistant đăng nhập vào Sensibo.",
+        "data": {
+          "auth_method": "Cách xác thực"
+        }
+      },
+      "account": {
+        "title": "Tài khoản Sensibo",
+        "description": "Đăng nhập bằng tài khoản Sensibo giống ứng dụng Android.",
+        "data": {
+          "email": "Email",
+          "password": "Mật khẩu",
+          "base_url": "API base URL"
+        }
+      },
+      "api_key": {
+        "title": "Sensibo API key",
+        "description": "Dùng API key Sensibo từ màn hình API key của tài khoản.",
+        "data": {
+          "api_key": "API key",
+          "base_url": "API base URL"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Không kết nối được tới Sensibo.",
+      "invalid_auth": "Sensibo từ chối thông tin đăng nhập.",
+      "unknown": "Lỗi không xác định."
+    },
+    "abort": {
+      "already_configured": "Tài khoản Sensibo này đã được cấu hình."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+abi_apk/
+base_apk/
+xapk_extracted/
+*.apk
+*.xapk
+*.apks
+*.aab
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/

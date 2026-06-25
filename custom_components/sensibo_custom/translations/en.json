@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sensibo Custom",
+        "description": "Choose how Home Assistant should authenticate with Sensibo.",
+        "data": {
+          "auth_method": "Authentication method"
+        }
+      },
+      "account": {
+        "title": "Sensibo account",
+        "description": "Log in with the same Sensibo account used by the Android app.",
+        "data": {
+          "email": "Email",
+          "password": "Password",
+          "base_url": "API base URL"
+        }
+      },
+      "api_key": {
+        "title": "Sensibo API key",
+        "description": "Use a Sensibo API key from the account API key screen.",
+        "data": {
+          "api_key": "API key",
+          "base_url": "API base URL"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to Sensibo.",
+      "invalid_auth": "Sensibo rejected the credentials.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This Sensibo account is already configured."
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "domain": "sensibo_custom",
+  "name": "Sensibo Custom",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://github.com/custom-components/sensibo_custom",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "0.1.0"
+}
